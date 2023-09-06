@@ -70,8 +70,9 @@ def get_driver(proxy):
     options.add_argument("--start-maximized")
     if proxy is not None:
         options.add_argument(f"--proxy-server={proxy}")
-    driver = webdriver.Chrome('chromedriver', options=options)
+    driver = webdriver.Chrome(options=options)
     return driver
+
 
 
 def driver_wait(driver, locator, by, secs=10, condition=ec.element_to_be_clickable):
